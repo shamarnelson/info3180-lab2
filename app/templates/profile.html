@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block main %}
+<div class="profile-container">
+  <div class="card-wrapper">
+    <div class="card-header">
+      <img
+        src="{{ url_for('static', filename='img/propic.png') }}"
+        alt=""
+        class="profile-img"
+      />
+      <h2 id="my-name">Mary Jane</h2>
+      <p id="social">@mjane</p>
+      <p>Kingston, Jamaica</p>
+      <p>Joined {{ join_date }}</p>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        I am a smart and talented. I love website design and development.
+        Contact me if you would like to work together on a project.
+      </p>
+      <div id="social-stats">
+        <ul class="social-stat">
+          <li>
+            <h3>7</h3>
+          </li>
+          <li class="stat">Posts</li>
+        </ul>
+        <ul class="social-stat">
+          <li>
+            <h3>100</h3>
+          </li>
+          <li class="stat">Following</li>
+        </ul>
+        <ul class="social-stat">
+          <li>
+            <h3>250</h3>
+          </li>
+          <li class="stat">Followers</li>
+        </ul>
+      </div>
+      <button id="follow">Follow</button>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

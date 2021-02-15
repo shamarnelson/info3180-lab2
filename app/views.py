@@ -5,6 +5,7 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 
+import datetime
 from app import app
 from flask import render_template, request, redirect, url_for, flash
 
@@ -23,6 +24,12 @@ def home():
 def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
+
+@app.route('/profile')
+def profile():
+    join_date = format_date_joined(2021,1,14)
+    """Render the websites's profile page."""
+    return render_template('profile.html', join_date=join_date)
 
 
 ###
@@ -52,6 +59,12 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+def format_date_joined(year, month, day):
+    """Format the join date."""
+    d = datetime.datetime(year, month, day)
+    return d.strftime('%B, %Y')
+
 
 
 if __name__ == '__main__':
